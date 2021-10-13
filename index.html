@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Historial Clinico</title>
+        <meta name="author" content="Bastian Olivares">
+        <meta name="description" content="Historial Clínidco de un pasiente">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="formulario, bitacora, antecedente, vital, perfil, clinico, historial">
+
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <link rel="stylesheet" href="css/estilos.css">
+
+        <!--LINK BOOSTRAP-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" id="usuario">
+                <img src="imgs/usuario.png" alt="imagen de ususairo" class="material-icons col-2 border " id="imagenUsario">
+                <div class="col mx-3">
+                    <h1 class="row" id="nombreCompletoPefil">Pepito Pérez</h1>
+                    <span class="row" id="edadPerfil">Septiembre 21, 2979, 43 años</span>
+                    <a class="row editar margin-bottom-5 mt-5" href="#" id="editar">editar</a>
+                </div>
+                
+            </div>
+
+ 
+            
+            <div class="row ">
+                <div class="col m-5" id="Signos Vitales">
+                    <span>ULTIMOS SIGNOS VITALES</span>
+                    <div class="row border border-dark p-2 m-0">
+                        <div>
+                            <ul class="row" id="Estatura">
+                                <span class="material-icons col">arrow_back_ios</span>
+                                <li class="col"> estatura</li>
+                                <li class="col" id="estatura">1.74</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="row" id="Peso">
+                                <span class="material-icons col">arrow_back_ios</span>
+                                <li class="col"> Peso</li>
+                                <li class="col" id="peso">70 Kg</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="row" id="FreCrd">
+                                <span class="material-icons col">arrow_back_ios</span>
+                                <li class="col"> Frecuencia Cardiaca</li>
+                                <li class="col" id="frecCrd">70</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col m-5" id="FormularioDatosImportantes">
+                    <div id="formulario" class="row-2 mb-5">
+                        <div>
+                            <h2 >Informacion</h2>
+                        </div>
+                        <div >
+                            <ul>
+                                <li class="row m-2">
+                                    <span class="col">Nombre Completo</span>
+                                    <input type="text" class="form-control col" id="nombreCompleto" value="Pepito Pérez" >
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col ">Edad</span>
+                                    <input type="number" class="form-control col" id="edad" value="43" >
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col text-right">Género</span>
+                                    <select class="form-select col" id="genero">
+                                        <option selected disabled value="default">Sin definir</option>
+                                        <option value="">Masculino</option>
+                                        <option value="">Femenino</option>
+                                    </select>
+                                </li>
+                                <li class="row m-2">
+                                    <span class= "col">Fecha Nacimiento</span>
+                                    <div class="input-group has-validation col">
+                                        <input type="date" class="form-control " id="fecha" >
+                                    </div>
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col">Correo electronico</span>
+                                    <div class="input-group has-validation col">
+                                        <input type="email" class="form-control" id="correo" aria-describedby="inputGroupPrepend" value="pepito.perez@email.com">
+                                    </div>
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col">Numero Telefonico</span>
+                                    <input type="number" class="form-control col" id="telefono" pattern=[0-9Kk-]+ value="12345678" required>
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col">Rut</span>
+                                    <input type="text" class="form-control col" id="rut" pattern="[0-9Kk-]+" value="1234567-8">
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col">Region</span>
+                                    <select class="form-select col" id="region">
+                                        <option selected disabled value="default">Sin definir</option>
+                                        <option value="Valparaiso" id="Valparaiso">Valparaiso</option>
+                                        <option value="Santiago">Santiago</option>
+                                    </select>
+                                </li>
+                                <li class="row m-2">
+                                    <span class="col">Comuna</span>
+                                    <select class="form-select col" id="comuna">
+                                        <option selected disabled value="default">Sin definir</option>
+                                        <!--TERMINAR EN TS-->
+                                    </select>
+                                </li>
+                            </ul>
+
+                            <div class="col-12">
+                                <button type="button" class="btn border-dark" id="botonActualizar">Actualizar</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id = "antecedentesClinicos" class="row-2 mb-3">
+                        <!--titulo-->
+                        <div class="row ">
+                            <span class="col-5 border-bottom border-dark" >Antecedentes Clinicos</span>
+                            <span class="material-icons col"id = "agregar">add_circle_outline</span>
+                        </div>
+                        <!--cuerpo-->
+                        <div class="row" id="-3">
+                            <div class="col border-bottom border-dark">
+                                <span class="row">20-10-2020</span>
+                                <span class="row">Hospitalizado por bronquitis</span>
+                            </div>
+                            <div class="col">
+                                <span class="material-icons col eliminar" id= "-3">delete</span>
+                                <span class="row">Eliminar</span>
+                            </div>   
+                        </div>
+                        <div class="row " id="-2">
+                            <div class="col border-bottom border-dark">
+                                <span class="row">20-10-2009</span>
+                                <span class="row">Hospitalizado por intoxicacion</span>
+                            </div>
+                            <div class="col">
+                                <span class="material-icons col eliminar" id="-2">delete</span>
+                                <span class="row">Eliminar</span>
+                            </div>   
+                        </div>
+                        <div class="row " id="-1">
+                            <div class="col border-bottom border-dark">
+                                <span class="row">20-10-2099</span>
+                                <span class="row">Hospitalizado por XXXXXXXXX</span>
+                            </div>
+                            <div class="col">
+                                <span class="material-icons col eliminar" id="-1">delete</span>
+                                <span class="row">Eliminar</span>
+                            </div>   
+                        </div>
+                    </div>
+
+                    <div id="agregarAntecedentes" class="m-4 row-2">
+                        <span>Datos Antecedentes Clínicos</span>
+                        <div class="border border-dark">
+                            <ul >
+                                <li class="row m-2">
+                                    <input type="text" class="form-control" id="motivo" placeholder="Motivo de Hopitalización" >
+                                </li>
+                                <li class="row m-2 ">
+                                    <div class="input-group col">
+                                        <input type="date" class="form-control " id="fechaAgregar" placeholder="21 Sept 1979" >
+                                        
+                                    </div>
+                                </li>
+                                <li class="row m-2 ">
+                                    <div class="col-12">
+                                        <button type="button" class="btn border-dark" id="botonCrear">Crear</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+
+        </div>
+        
+        
+        <script src="js/inicio.js" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
